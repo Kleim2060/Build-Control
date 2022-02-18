@@ -1,1 +1,36 @@
-!function(){var e={54:function(e){e.exports=(e,t)=>e+t}},t={};function o(r){var n=t[r];if(void 0!==n)return n.exports;var c=t[r]={exports:{}};return e[r](c,c.exports,o),c.exports}!function(){const e=o(54);console.log(e(2,10)),console.log(e(12,5));const t=document.querySelector(".burger");if(t){const e=document.querySelector(".header__nav"),o=document.querySelector("body");t.addEventListener("click",(function(r){t.classList.toggle("_active"),e.classList.toggle("_active"),o.classList.toggle("_active")}))}const r=document.querySelectorAll('.header__nav--link[href*="#"]');for(let e of r)e.addEventListener("click",(function(t){t.preventDefault();const o=e.getAttribute("href");document.querySelector(""+o).scrollIntoView({behavior:"smooth",block:"center"})}));const n=document.querySelectorAll('.footer__nav--link[href*="#"]');for(let e of n)e.addEventListener("click",(function(t){t.preventDefault();const o=e.getAttribute("href");document.querySelector(""+o).scrollIntoView({behavior:"smooth",block:"center"})}))}()}();
+const iconMenu = document.querySelector('.burger');
+if (iconMenu){
+    const menuBody = document.querySelector('.header__nav');
+    const burgerBody = document.querySelector('body');
+    iconMenu.addEventListener('click', function(e) {
+        iconMenu.classList.toggle('_active');
+        menuBody.classList.toggle('_active');
+        burgerBody.classList.toggle('_active');
+    });
+}
+
+const anchors = document.querySelectorAll('.header__nav--link[href*="#"]')
+
+for (let anchor of anchors) {
+    anchor.addEventListener("click", function(event) {
+        event.preventDefault();
+        const blockId = anchor.getAttribute('href')
+        document.querySelector('' + blockId).scrollIntoView({
+            behavior: "smooth",
+            block: 'center'
+        })
+    });
+}
+
+const footers = document.querySelectorAll('.footer__nav--link[href*="#"]')
+
+for (let footer of footers) {
+    footer.addEventListener("click", function(event) {
+        event.preventDefault();
+        const blockId = footer.getAttribute('href')
+        document.querySelector('' + blockId).scrollIntoView({
+            behavior: "smooth",
+            block: 'center'
+        })
+    });
+}
